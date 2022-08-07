@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+
+:root {
+    --font-body: 'Poppins';
+
+    --title: #fffcf9;
+    --subtitle: #b3b3b3;
+    --bg-button: #e9e6e3;
+    --background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%);
+}
+
+body{
+    min-height: 100%;
+
+    background: var(--background) fixed;
+
+    -webkit-font-smoothing: antialiased;
+
+    overflow-x: hidden;
+}
+
+nav{
+    min-width: 100%;
+    margin: 5rem 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .container,
+section .movie,
+section .button,
+section .instruction{
+    width: 45rem;
+
+    margin: 1.5rem auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .title{
+    width: 45rem;
+    margin: 1.5rem auto;
+
+    text-align: center;
+    color: var(--title);
+    font: 700 1.8rem var(--font-body);
+
+}
+
+section .movie .imgPoster{
+    width: 14.6875rem;
+    height: 17,4375rem;
+
+    object-fit: cover;
+    
+    padding: 1rem;
+}
+
+section .movie .titleMovie{
+    text-align: left;
+    color: var(--subtitle);
+    font: 700 1.5rem var(--font-body);
+    padding: 0.5rem 1rem;
+}
+
+section .movie .descriptionMovie{
+    text-align: left;
+    color: var(--subtitle);
+    font: 400 1rem var(--font-body);
+    padding: 0.5rem 1rem;
+}
+
+section .button .buttonRandom{
+    width: 12rem;
+    height: 2.94rem;
+    
+    background-color: var(--bg-button);
+    border-radius: 5px;
+
+    font: 700 .8rem var(--font-body);
+    padding: 0 .5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    cursor: pointer;
+}
+
+section .button .buttonRandom img{
+    width: 35.56px;
+    height: 25.29px;
+}
+
+section .instruction .textInstruction{
+    text-align: center;
+    color: var(--subtitle);
+    font: 400 1rem var(--font-body);
+    padding: 1rem;
+}
