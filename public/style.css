@@ -72,7 +72,7 @@ section .movie .titleMovie{
     padding: 0.5rem 1rem;
 }
 
-section .movie .descriptionMovie{
+section .movie .overviewMovie{
     text-align: left;
     color: var(--subtitle);
     font: 400 1rem var(--font-body);

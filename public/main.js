@@ -20,33 +20,29 @@ function getMovies(url){
 
 function showMovies(data) {
 
-    main.innerHTML = ''
-
-    const moviesEl = document.createElement('div')
-    moviesEl.classList.add('movie')
-
-    const buttonRandom = document.querySelector('.buttonRandom')
+    const buttonRandom = document.querySelector('.buttonRandom'),
+        imgPoster = document.querySelector('.imgMovie img'),
+        titleMovie = document.querySelector('.titleMovie'),
+        overviewMovie = document.querySelector('.overviewMovie')
 
     buttonRandom.addEventListener('click', function () {
-        const movieRandom = Math.floor(Math.random() * data.length + 1)
+        const movieRandom = Math.floor(Math.random() * 30)
 
-        data.forEach(() => {  
-            
+        try{
+            data.forEach(() => {  
                 const {title, overview, poster_path, vote_average} = data[movieRandom]
-
-                console.log(vote_average)
-
-                moviesEl.innerHTML = `
-                    <div class="imgMovie">
-                        <img class="imgPoster" src="${IMG_URL+poster_path}" alt="${title}">
-                    </div>
-                    <div class="descriptionMovie">
-                        <h2 class="titleMovie">${title}</h2>
-                        <p class="descriptionMovie">${overview}</p>
-                    </div>
-                `
-                main.appendChild(moviesEl)
-        })
+    
+                imgPoster.src = `${IMG_URL+poster_path}`
+                imgPoster.title = `${title}`
+                titleMovie.innerText = `${title}`
+                overviewMovie.innerText = `${overview}`
+            })
+        }catch(error){
+            imgPoster.src = 'assets/posterError.png'
+            imgPoster.title = 'erro'
+            titleMovie.innerText = 'Opa, infelizmente ocorreu um erro, tentar novamente'
+            overviewMovie.innerText = ' '
+        }
     })
 }
 
