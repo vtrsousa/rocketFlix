@@ -3,15 +3,9 @@ const BASE_URL = 'https://api.themoviedb.org/3'
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY
 const IMG_URL = 'https://image.tmdb.org/t/p/w500/'
 
-const main = document.getElementById('content')
-
 function getMovies(url){
         
     fetch(url).then(res => res.json()).then(data => {
-
-        const random = data.results.length
-
-        console.log(data.results)
 
         showMovies(data.results)
         
@@ -32,15 +26,15 @@ function showMovies(data) {
             data.forEach(() => {  
                 const {title, overview, poster_path, vote_average} = data[movieRandom]
     
-                imgPoster.src = `${IMG_URL+poster_path}`
+                imgPoster.src = `${IMG_URL + poster_path}`
                 imgPoster.title = `${title}`
                 titleMovie.innerText = `${title}`
-                overviewMovie.innerText = `${overview}`
+                overviewMovie.innerText = `${overview}`.substring(0,200) + ' ...'
             })
         }catch(error){
             imgPoster.src = 'assets/posterError.png'
             imgPoster.title = 'erro'
-            titleMovie.innerText = 'Opa, infelizmente ocorreu um erro, tentar novamente'
+            titleMovie.innerText = 'Opa, infelizmente ocorreu um erro, tente novamente.'
             overviewMovie.innerText = ' '
         }
     })

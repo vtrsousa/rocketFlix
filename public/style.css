@@ -16,9 +16,9 @@
 }
 
 body{
-    min-height: 100%;
+    height: 100%;
 
-    background: var(--background) fixed;
+    background: var(--background);
 
     -webkit-font-smoothing: antialiased;
 
@@ -33,27 +33,46 @@ nav{
     justify-content: center;
 }
 
-section .container,
-section .movie,
-section .button,
-section .instruction{
-    width: 45rem;
-
-    margin: 1.5rem auto;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 section .title{
-    width: 45rem;
+    max-width: 100%;
     margin: 1.5rem auto;
 
     text-align: center;
     color: var(--title);
-    font: 700 1.8rem var(--font-body);
+    font: 700 1.5rem var(--font-body);
+}
 
+section .container,
+section .button,
+section .instruction{
+    max-width: 100%;
+
+    margin: 1.5rem auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section .movie{
+    max-width: 100%;
+    height: 30rem;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section .movie img{
+    width: 10rem;
+    height: 17rem;
+}
+
+section .movie .descriptionMovie h2{
+    min-width: 100%;
+    text-align: center;
 }
 
 section .movie .imgPoster{
@@ -69,7 +88,7 @@ section .movie .titleMovie{
     text-align: left;
     color: var(--subtitle);
     font: 700 1.5rem var(--font-body);
-    padding: 0.5rem 1rem;
+    margin: 1.2rem 1rem;
 }
 
 section .movie .overviewMovie{
@@ -82,12 +101,14 @@ section .movie .overviewMovie{
 section .button .buttonRandom{
     width: 12rem;
     height: 2.94rem;
+
+    margin: 1.5rem auto;
     
     background-color: var(--bg-button);
     border-radius: 5px;
 
     font: 700 .8rem var(--font-body);
-    padding: 0 .5rem;
+    padding: 0.5rem;
 
     display: flex;
     align-items: center;
@@ -105,5 +126,77 @@ section .instruction .textInstruction{
     text-align: center;
     color: var(--subtitle);
     font: 400 1rem var(--font-body);
-    padding: 1rem;
+    padding: 1.5rem;
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    section .movie .titleMovie{
+        font: 700 1.7rem var(--font-body);
+    }
+    
+    section .movie .overviewMovie{
+        text-align: center;
+        font: 400 1.2rem var(--font-body);
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 991px) {
+    section .movie{
+        max-width: 80%;
+    }
+
+    section .movie .titleMovie{
+        font: 700 1.7rem var(--font-body);
+    }
+    
+    section .movie .overviewMovie{
+        text-align: center;
+        font: 400 1.2rem var(--font-body);
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1022px) {
+
+    section .movie{
+        max-width: 47rem;
+        height: 30rem;
+        margin: 0 auto;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section .movie .titleMovie{
+        font: 700 1.7rem var(--font-body);
+    }
+    
+    section .movie .overviewMovie{
+        text-align: left;
+        font: 400 1.2rem var(--font-body);
+    }
+}
+
+@media screen and (min-width: 1023px){
+    section .movie{
+        max-width: 47rem;
+        height: 30rem;
+        margin: 0 auto;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section .movie .titleMovie{
+        font: 700 1.7rem var(--font-body);
+    }
+    
+    section .movie .overviewMovie{
+        text-align: left;
+        font: 400 1.2rem var(--font-body);
+    }
 }
