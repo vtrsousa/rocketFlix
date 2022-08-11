@@ -160,7 +160,7 @@ section .instruction .textInstruction{
 
     section .movie{
         max-width: 47rem;
-        height: 30rem;
+        height: 22rem;
         margin: 0 auto;
     
         display: flex;
@@ -182,7 +182,7 @@ section .instruction .textInstruction{
 @media screen and (min-width: 1023px){
     section .movie{
         max-width: 47rem;
-        height: 30rem;
+        height: 22rem;
         margin: 0 auto;
     
         display: flex;
