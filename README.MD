@@ -1,4 +1,4 @@
-*Desafio: RocketCoffee - Rocketseat*
+*Desafio: RocketFlix - Rocketseat*
 
 Consumo da da API do themoviedb.org para a exibição de um filme aleatório sempre que clicar em *Encontrar Filme*.
 
